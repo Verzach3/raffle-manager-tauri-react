@@ -13,7 +13,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.gaer.rafflemanager",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -21,8 +21,11 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "resources": [],
-      "externalBin": [],
+      "resources": ["external/assets/"],
+      "externalBin": [
+        "external/binaries/raffle-editor",
+        "external/binaries/list-dir"
+      ],
       "copyright": "",
       "category": "DeveloperTool",
       "shortDescription": "",
@@ -50,7 +53,21 @@
       "active": false
     },
     "allowlist": {
-      "all": true
+      "all": true,
+      "shell": {
+        "all": true,
+        "execute": true,
+        "open": false,
+        "scope": [
+          {
+            "name": "external/binaries/raffle-editor",
+            "cmd": "raffle-editor",
+            "sidecar": true,
+            "args": true
+          }
+        ],
+        "sidecar": true
+      }
     },
     "windows": [
       {
@@ -62,7 +79,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'"
+      "csp": "null"
     }
   }
 }
